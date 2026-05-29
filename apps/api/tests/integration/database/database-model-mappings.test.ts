@@ -37,8 +37,8 @@ describe('database-model-mappings', () => {
 	it('resolves by id/upstream/case-insensitive', () => {
 		ModelMappings.replace([
 			{
-				id: 'sonnet-4.6',
-				label: 'Sonnet',
+				id: 'claude-sonnet-4-6',
+				label: 'Claude Sonnet 4.6',
 				provider: 'claude',
 				upstreamModel: 'claude-sonnet-4-6',
 				sortOrder: 2,
@@ -54,8 +54,8 @@ describe('database-model-mappings', () => {
 			}
 		]);
 
-		expect(ModelMappings.resolveForChatCompletion('sonnet-4.6')?.upstreamModel).toBe('claude-sonnet-4-6');
-		expect(ModelMappings.resolveForChatCompletion('CLAUDE-SONNET-4-6')?.id).toBe('sonnet-4.6');
+		expect(ModelMappings.resolveForChatCompletion('claude-sonnet-4-6')?.upstreamModel).toBe('claude-sonnet-4-6');
+		expect(ModelMappings.resolveForChatCompletion('CLAUDE-SONNET-4-6')?.id).toBe('claude-sonnet-4-6');
 		expect(ModelMappings.resolveForChatCompletion('second')?.upstreamModel).toBe('claude-second');
 	});
 });
